@@ -10,10 +10,10 @@
 
         @if($participant->is_winner && $participant->winner)
             <div class="alert alert-success">
-                🎊 Selamat! Anda memenangkan <strong>{{ $participant->winner->prize->name }}</strong>
+                Selamat! Anda memenangkan <strong>{{ $participant->winner->prize->name }}</strong>
             </div>
         @else
-            <p class="text-muted">Simpan nomor ini. Anda tidak perlu melakukan apa pun lagi — cukup tunggu proses pengundian.</p>
+            <p class="text-muted">Simpan nomor ini. Anda tidak perlu melakukan apa pun lagi, cukup tunggu proses pengundian.</p>
         @endif
 
         <small class="text-muted">Terdaftar: {{ $participant->registered_at->translatedFormat('d M Y H:i') }}</small>

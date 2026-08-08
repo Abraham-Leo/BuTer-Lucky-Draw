@@ -106,7 +106,7 @@ startBtn.addEventListener('click', async () => {
             }
 
             display.textContent = data.ticket_number;
-            resultBox.innerHTML = `<div class="alert alert-success">🎉 <strong>${data.name}</strong> memenangkan <strong>${data.prize}</strong></div>`;
+            resultBox.innerHTML = `<div class="alert alert-success"> <strong>${data.name}</strong> memenangkan <strong>${data.prize}</strong></div>`;
 
             document.getElementById('stat-winners').textContent = parseInt(document.getElementById('stat-winners').textContent) + 1;
             document.getElementById('stat-remaining').textContent = data.remaining_participants;

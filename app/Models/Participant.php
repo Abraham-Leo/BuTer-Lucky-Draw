@@ -9,7 +9,10 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Participant extends Model
 {
     protected $fillable = [
-        'user_id', 'ticket_number', 'registered_at', 'is_winner',
+        'user_id',
+        'ticket_number',
+        'registered_at',
+        'is_winner',
     ];
 
     protected $casts = [
@@ -23,17 +26,22 @@ class Participant extends Model
 
     public function winner(): HasOne
     {
-        return $this->hasOne(Winner::class);
+        return $this->hasOne(Winner::class)
+            ->where('is_cancelled', false);
     }
 
     /**
-     * Generate a unique 4-digit ticket number (random, not sequential —
-     * see saran "Nomor Undian Acak" in the spec).
+     * Generate a unique 4-digit ticket number.
      */
     public static function generateUniqueTicketNumber(): string
     {
         do {
-            $candidate = str_pad((string) random_int(0, 9999), 4, '0', STR_PAD_LEFT);
+            $candidate = str_pad(
+                (string) random_int(0, 9999),
+                4,
+                '0',
+                STR_PAD_LEFT
+            );
         } while (self::where('ticket_number', $candidate)->exists());
 
         return $candidate;
