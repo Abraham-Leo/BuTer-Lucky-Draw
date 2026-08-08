@@ -1,0 +1,3 @@
+GOOGLE_CLIENT_ID=isi_dari_google_cloud_console
+GOOGLE_CLIENT_SECRET=isi_dari_google_cloud_console
+GOOGLE_REDIRECT_URI=https://domain-anda.com/auth/google/callback
