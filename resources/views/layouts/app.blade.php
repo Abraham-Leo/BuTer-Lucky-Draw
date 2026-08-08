@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'DoorPrize Draw System')</title>
+    <title>@yield('title', 'BuTer Lucky Draw')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background: #f5f6fa; }
@@ -17,7 +17,7 @@
     @auth
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container">
-            <a class="navbar-brand" href="{{ auth()->user()->canManageDraw() ? route('admin.dashboard') : route('participant.dashboard') }}">DPDS</a>
+            <a class="navbar-brand" href="{{ auth()->user()->canManageDraw() ? route('admin.dashboard') : route('participant.dashboard') }}">BuTer Lucky Draw</a>
             <div class="d-flex align-items-center gap-3">
                 @if(auth()->user()->canManageDraw())
                     <a href="{{ route('admin.dashboard') }}" class="text-light text-decoration-none">Dashboard</a>
